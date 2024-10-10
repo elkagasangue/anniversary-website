@@ -5,74 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Anniversary!</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function checkPassword() {
-            var password = prompt("Enter the password:");
-            if (password !== "Iloveemil") { // Your chosen password
-                alert("Incorrect password. Access denied.");
-                window.location = "https://google.com"; // Redirect if password is incorrect
-            } else {
-                document.body.style.display = 'flex'; // Use flexbox to center
-                document.querySelector('.container').style.display = 'block'; // Show the container
-            }
-        }
-
-        function readMe() {
-            window.location.href = "readme.html"; // Redirect to the read me page
-        }
-    </script>
     <style>
         body {
-            display: none; /* Hide content initially */
-            margin: 0;
-            font-family: 'Barlow', sans-serif; /* Apply Barlow font */
-            color: white;
-            background-image: url('anniversary.jpg'); /* Ensure you have this image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('yourpicture.jpg') no-repeat center center fixed;
             background-size: cover;
-            background-position: center;
-            height: 100vh; /* Full height */
-            flex-direction: column; /* Stack items vertically */
-            justify-content: center; /* Center vertically */
-            align-items: center; /* Center horizontally */
+            font-family: 'Barlow', sans-serif;
+            color: white;
+            text-align: center;
         }
 
         .container {
-            display: none; /* Initially hidden */
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
-            border-radius: 10px;
-            max-width: 90%; /* Responsive width */
-            text-align: center; /* Center text in the container */
-        }
-
-        h1 {
-            font-size: 2em; /* Responsive font size */
-            margin: 0; /* Remove margin */
-        }
-
-        p {
-            font-size: 1.2em; /* Responsive font size */
-            margin: 0; /* Remove margin */
-        }
-
-        button {
-            margin-top: 20px; /* Space above the button */
-            padding: 10px 20px; /* Button padding */
-            font-size: 1em; /* Button font size */
-            color: white; /* Text color */
-            background-color: #007BFF; /* Button background color */
-            border: none; /* No border */
-            border-radius: 5px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor */
+            display: none;
         }
     </style>
+    <script>
+        function checkPassword() {
+            var password = prompt("Enter the password:");
+            if (password !== "Iloveemil") { // Replace with your chosen password
+                alert("Incorrect password. Access denied.");
+                window.location = "https://google.com"; // Redirect if password is incorrect
+            } else {
+                document.querySelector('.container').style.display = 'block'; // Show content if password is correct
+                document.body.style.display = 'block'; // Show the body
+            }
+        }
+    </script>
 </head>
-<body onload="checkPassword()">
+<body onload="checkPassword()" style="display: none;">
     <div class="container">
         <h1>Happy Anniversary, My Love!</h1>
         <p>Here's to many more years of happiness together!</p>
-        <button onclick="readMe()">Read Me</button>
+        <a href="readme.html" style="color: white; text-decoration: underline;">Read Me</a>
     </div>
 </body>
 </html>
