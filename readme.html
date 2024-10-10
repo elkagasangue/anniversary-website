@@ -12,8 +12,7 @@
             display: flex; /* Use flexbox */
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
-            overflow: hidden; /* Hide overflow for floating hearts */
-            position: relative; /* Allow positioning of hearts */
+            position: relative; /* Allow positioning of background */
             font-family: 'Barlow', sans-serif; /* Apply Barlow font */
         }
 
@@ -35,53 +34,13 @@
             font-size: 2.5em;
             text-align: center;
             position: relative;
-            z-index: 1; /* Bring text above hearts */
+            z-index: 1; /* Bring text above background */
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
-        }
-
-        .heart {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Heart shape */
-            opacity: 0.7;
-            animation: float 5s infinite; /* Float animation */
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-50px); /* Move up */
-            }
-            100% {
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
 <body>
     <div class="background"></div> <!-- Background div -->
     <h1>Your Full Anniversary Message!</h1>
-    
-    <div id="hearts"></div> <!-- Hearts container -->
-    
-    <script>
-        // Create floating hearts
-        function createHearts() {
-            const heartsContainer = document.getElementById('hearts');
-            for (let i = 0; i < 20; i++) {
-                const heart = document.createElement('div');
-                heart.classList.add('heart');
-                heart.style.left = Math.random() * window.innerWidth + 'px';
-                heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Random duration
-                heartsContainer.appendChild(heart);
-            }
-        }
-
-        createHearts(); // Call the function to create hearts
-    </script>
 </body>
 </html>
