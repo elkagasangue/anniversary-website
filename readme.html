@@ -21,12 +21,21 @@
             filter: blur(8px); /* Apply blur effect to background */
         }
 
+        .overlay {
+            position: absolute; /* Position overlay above background */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+            z-index: 0; /* Place behind content */
+        }
+
         .container {
             position: relative;
             z-index: 1; /* Bring content above background */
             text-align: center;
             color: white;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for better readability */
             padding: 20px; /* Padding for aesthetics */
             border-radius: 10px; /* Rounded corners */
         }
@@ -43,6 +52,7 @@
     </style>
 </head>
 <body>
+    <div class="overlay"></div> <!-- Overlay for improved readability -->
     <div class="container">
         <h1>Your Full Anniversary Message!</h1>
         <p>Here is where you can write your heartfelt anniversary message.</p>
