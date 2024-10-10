@@ -15,26 +15,17 @@
             font-family: 'Barlow', sans-serif;
             overflow: hidden;
             position: relative;
-        }
-
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: url('anniversary.jpg'); /* Ensure this matches your image filename */
             background-size: cover; /* Cover the whole page */
             background-position: center; /* Center the image */
             filter: blur(8px); /* Apply blur effect */
-            z-index: 0; /* Place behind content */
         }
 
         .container {
-            position: relative;
-            z-index: 1;
             text-align: center;
             color: white;
+            z-index: 1; /* Bring content above background */
+            display: none; /* Initially hidden */
         }
 
         h1 {
@@ -67,17 +58,16 @@
                 alert("Incorrect password. Access denied.");
                 window.location = "https://google.com"; // Redirect if password is incorrect
             } else {
-                document.getElementById('readMeButton').style.display = 'block'; // Show the button if password is correct
+                document.querySelector('.container').style.display = 'block'; // Show content if password is correct
             }
         }
     </script>
 </head>
 <body onload="checkPassword()">
-    <div class="background"></div>
     <div class="container">
-        <h1>Welcome!</h1>
-        <p>Please enter the password to view your special message.</p>
-        <button id="readMeButton" style="display: none;" onclick="window.location.href='readme.html'">Read Me</button>
+        <h1>Happy Anniversary, My Love!</h1>
+        <p>Here's to many more years of happiness together!</p>
+        <button onclick="window.location.href='readme.html'">Read Me</button>
     </div>
 </body>
 </html>
