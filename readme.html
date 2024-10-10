@@ -12,9 +12,9 @@
             display: flex; /* Use flexbox */
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
-            overflow: hidden; /* Hide overflow for floating hearts */
-            position: relative; /* Allow positioning of hearts */
+            position: relative; /* Allow positioning of background */
             font-family: 'Barlow', sans-serif; /* Apply Barlow font */
+            overflow: hidden; /* Prevent overflow */
         }
 
         .background {
@@ -35,18 +35,29 @@
             font-size: 2.5em;
             text-align: center;
             position: relative;
-            z-index: 1; /* Bring text above hearts */
+            z-index: 1; /* Bring text above background */
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
         }
 
-        .heart {
+        .star {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Heart shape */
-            opacity: 0.7;
-            animation: float 5s infinite; /* Float animation */
+            width: 10px; /* Star size */
+            height: 10px;
+            background-color: gold; /* Star color */
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Star shape */
+            opacity: 0.8;
+            animation: sparkle 1.5s infinite; /* Sparkle animation */
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
         }
 
         @keyframes float {
@@ -54,7 +65,7 @@
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-50px); /* Move up */
+                transform: translateY(-10px); /* Move up */
             }
             100% {
                 transform: translateY(0);
@@ -66,22 +77,27 @@
     <div class="background"></div> <!-- Background div -->
     <h1>Your Full Anniversary Message!</h1>
     
-    <div id="hearts"></div> <!-- Hearts container -->
+    <div id="stars"></div> <!-- Stars container -->
     
     <script>
-        // Create floating hearts
-        function createHearts() {
-            const heartsContainer = document.getElementById('hearts');
-            for (let i = 0; i < 20; i++) {
-                const heart = document.createElement('div');
-                heart.classList.add('heart');
-                heart.style.left = Math.random() * window.innerWidth + 'px';
-                heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Random duration
-                heartsContainer.appendChild(heart);
+        // Create sparkling and floating stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 20; i++) { // Adjust number of stars here
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * window.innerWidth + 'px';
+                star.style.top = Math.random() * window.innerHeight + 'px';
+                star.style.animationDuration = (Math.random() * 1 + 1) + 's'; // Random duration
+                star.style.animationName = 'sparkle, float'; // Combined animations
+                star.style.animationTimingFunction = 'linear, ease-in-out'; // Timing functions
+                star.style.animationDelay = (Math.random() * 2) + 's'; // Random delay
+                star.style.animationIterationCount = 'infinite'; // Infinite iterations
+                starsContainer.appendChild(star);
             }
         }
 
-        createHearts(); // Call the function to create hearts
+        createStars(); // Call the function to create stars
     </script>
 </body>
 </html>
