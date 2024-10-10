@@ -13,10 +13,21 @@
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
             overflow: hidden; /* Hide overflow for sparkling effect */
-            background-image: url('romantic-background.jpg'); /* Add your romantic background image */
-            background-size: cover; /* Cover the whole page */
             position: relative; /* Allow positioning of sparkles */
             font-family: 'Barlow', sans-serif; /* Apply Barlow font */
+        }
+
+        .background {
+            position: absolute; /* Position the background */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('yourpicture.jpg'); /* Replace with your actual image file */
+            background-size: cover; /* Cover the whole page */
+            background-position: center; /* Center the image */
+            filter: blur(8px); /* Apply blur effect */
+            z-index: 0; /* Place behind content */
         }
 
         h1 {
@@ -54,6 +65,7 @@
     </style>
 </head>
 <body>
+    <div class="background"></div> <!-- Background div -->
     <h1>Your Full Anniversary Message!</h1>
     <div id="sparkles"></div>
     
