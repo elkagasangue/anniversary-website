@@ -7,39 +7,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: url('yourpicture.jpg') no-repeat center center fixed;
-            background-size: cover;
             font-family: 'Barlow', sans-serif;
-            color: white;
-            text-align: center;
+            overflow: hidden;
+        }
+        
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('yourpicture.jpg'); /* Ensure this matches your image filename */
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: 0;
         }
 
         .container {
-            display: none;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
     </style>
     <script>
         function checkPassword() {
             var password = prompt("Enter the password:");
-            if (password !== "Iloveemil") { // Replace with your chosen password
+            if (password !== "Iloveemil") { // Replace "Iloveemil" with your chosen password
                 alert("Incorrect password. Access denied.");
                 window.location = "https://google.com"; // Redirect if password is incorrect
             } else {
-                document.querySelector('.container').style.display = 'block'; // Show content if password is correct
-                document.body.style.display = 'block'; // Show the body
+                window.location = "readme.html"; // Redirect to readme.html if password is correct
             }
         }
     </script>
 </head>
-<body onload="checkPassword()" style="display: none;">
+<body onload="checkPassword()">
+    <div class="background"></div>
     <div class="container">
-        <h1>Happy Anniversary, My Love!</h1>
-        <p>Here's to many more years of happiness together!</p>
-        <a href="readme.html" style="color: white; text-decoration: underline;">Read Me</a>
+        <h1>Welcome!</h1>
     </div>
 </body>
 </html>
