@@ -12,8 +12,8 @@
             display: flex; /* Use flexbox */
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
-            overflow: hidden; /* Hide overflow for sparkling effect */
-            position: relative; /* Allow positioning of sparkles */
+            overflow: hidden; /* Hide overflow for floating hearts */
+            position: relative; /* Allow positioning of hearts */
             font-family: 'Barlow', sans-serif; /* Apply Barlow font */
         }
 
@@ -23,7 +23,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('anniversary-background.jpg'); /* Replace with your actual image file */
+            background-image: url('063.jpg'); /* Ensure the image is named '063.jpg' */
             background-size: cover; /* Cover the whole page */
             background-position: center; /* Center the image */
             filter: blur(8px); /* Apply blur effect */
@@ -35,31 +35,29 @@
             font-size: 2.5em;
             text-align: center;
             position: relative;
-            z-index: 1; /* Bring text above sparkles */
+            z-index: 1; /* Bring text above hearts */
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
         }
 
-        .sparkle {
+        .heart {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%; /* Make circles */
-            animation: sparkle 1.5s infinite; /* Sparkle animation */
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Heart shape */
+            opacity: 0.7;
+            animation: float 5s infinite; /* Float animation */
         }
 
-        @keyframes sparkle {
+        @keyframes float {
             0% {
-                transform: scale(1);
-                opacity: 0.7;
+                transform: translateY(0);
             }
             50% {
-                transform: scale(1.5);
-                opacity: 1;
+                transform: translateY(-50px); /* Move up */
             }
             100% {
-                transform: scale(1);
-                opacity: 0.7;
+                transform: translateY(0);
             }
         }
     </style>
@@ -67,23 +65,23 @@
 <body>
     <div class="background"></div> <!-- Background div -->
     <h1>Your Full Anniversary Message!</h1>
-    <div id="sparkles"></div>
+    
+    <div id="hearts"></div> <!-- Hearts container -->
     
     <script>
-        // Create sparkles
-        function createSparkles() {
-            const sparklesContainer = document.getElementById('sparkles');
-            for (let i = 0; i < 100; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.classList.add('sparkle');
-                sparkle.style.left = Math.random() * window.innerWidth + 'px';
-                sparkle.style.top = Math.random() * window.innerHeight + 'px';
-                sparkle.style.animationDuration = Math.random() * 2 + 1 + 's'; // Random duration
-                sparklesContainer.appendChild(sparkle);
+        // Create floating hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Random duration
+                heartsContainer.appendChild(heart);
             }
         }
 
-        createSparkles(); // Call the function to create sparkles
+        createHearts(); // Call the function to create hearts
     </script>
 </body>
 </html>
