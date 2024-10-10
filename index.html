@@ -12,7 +12,7 @@
                 alert("Incorrect password. Access denied.");
                 window.location = "https://google.com"; // Redirect if password is incorrect
             } else {
-                document.body.style.display = 'block'; // Show the body
+                document.body.style.display = 'flex'; // Use flexbox to center
                 document.querySelector('.container').style.display = 'block'; // Show the container
             }
         }
@@ -26,11 +26,10 @@
             background-image: url('anniversary.jpg'); /* Ensure you have this image */
             background-size: cover;
             background-position: center;
-            text-align: center; /* Center text */
             height: 100vh; /* Full height */
-            display: flex; /* Use flexbox for centering */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
         }
 
         .container {
@@ -39,16 +38,17 @@
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
             border-radius: 10px;
             max-width: 90%; /* Responsive width */
-            margin: 20px; /* Add margin for spacing */
             text-align: center; /* Center text in the container */
         }
 
         h1 {
             font-size: 2em; /* Responsive font size */
+            margin: 0; /* Remove margin */
         }
 
         p {
             font-size: 1.2em; /* Responsive font size */
+            margin: 0; /* Remove margin */
         }
     </style>
 </head>
