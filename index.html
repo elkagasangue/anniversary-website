@@ -8,25 +8,20 @@
     <script>
         function checkPassword() {
             var password = prompt("Enter the password:");
-            if (password !== "Iloveemil") { // Replace "yourPassword" with your chosen password
+            if (password !== "Iloveemil") { // Your chosen password
                 alert("Incorrect password. Access denied.");
                 window.location = "https://google.com"; // Redirect if password is incorrect
             } else {
                 document.querySelector('.container').style.display = 'block'; // Show content if password is correct
+                document.body.style.display = 'block'; // Show the body
             }
         }
     </script>
 </head>
 <body onload="checkPassword()" style="display: none;">
-    <div class="container">
+    <div class="container" style="display: none;">
         <h1>Happy Anniversary, My Love!</h1>
         <p>Here's to many more years of happiness together!</p>
     </div>
-    <script>
-        // This will ensure the body is only shown after password verification
-        function revealContent() {
-            document.body.style.display = 'block';
-        }
-    </script>
 </body>
 </html>
