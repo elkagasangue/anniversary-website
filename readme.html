@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Me</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh; /* Full height */
+            display: flex; /* Use flexbox */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            overflow: hidden; /* Hide overflow for sparkling effect */
+            background-color: #282c34; /* Background color */
+            position: relative; /* Allow positioning of sparkles */
+        }
 
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Bring text above sparkles */
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%; /* Make circles */
+            animation: sparkle 1.5s infinite; /* Sparkle animation */
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Full Anniversary Message!</h1>
+    <div id="sparkles"></div>
+    
+    <script>
+        // Create sparkles
+        function createSparkles() {
+            const sparklesContainer = document.getElementById('sparkles');
+            for (let i = 0; i < 100; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                sparkle.style.left = Math.random() * window.innerWidth + 'px';
+                sparkle.style.top = Math.random() * window.innerHeight + 'px';
+                sparkle.style.animationDuration = Math.random() * 2 + 1 + 's'; // Random duration
+                sparklesContainer.appendChild(sparkle);
+            }
+        }
+
+        createSparkles(); // Call the function to create sparkles
+    </script>
+</body>
+</html>
