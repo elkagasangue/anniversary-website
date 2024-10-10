@@ -17,8 +17,8 @@
             }
         }
 
-        function showFullMessage() {
-            document.getElementById('fullMessage').style.display = 'block'; // Show full message
+        function readMe() {
+            window.location.href = "readme.html"; // Redirect to the read me page
         }
     </script>
     <style>
@@ -65,23 +65,13 @@
             border-radius: 5px; /* Rounded corners */
             cursor: pointer; /* Pointer cursor */
         }
-
-        #fullMessage {
-            display: none; /* Initially hidden */
-            margin-top: 20px; /* Space above the full message */
-            font-size: 1.1em; /* Slightly smaller font for the full message */
-        }
     </style>
 </head>
 <body onload="checkPassword()">
     <div class="container">
         <h1>Happy Anniversary, My Love!</h1>
         <p>Here's to many more years of happiness together!</p>
-        <button onclick="showFullMessage()">Show Full Message</button>
-        <div id="fullMessage">
-            <p>Here is your full message! You can write whatever you want to express your love and gratitude.</p>
-            <p>Feel free to customize this text!</p>
-        </div>
+        <button onclick="readMe()">Read Me</button>
     </div>
 </body>
 </html>
