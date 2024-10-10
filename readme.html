@@ -59,6 +59,18 @@
                 opacity: 1;
             }
         }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px); /* Move up */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -68,7 +80,7 @@
     <div id="stars"></div> <!-- Stars container -->
     
     <script>
-        // Create sparkling stars
+        // Create sparkling and floating stars
         function createStars() {
             const starsContainer = document.getElementById('stars');
             for (let i = 0; i < 20; i++) { // Adjust number of stars here
@@ -77,6 +89,10 @@
                 star.style.left = Math.random() * window.innerWidth + 'px';
                 star.style.top = Math.random() * window.innerHeight + 'px';
                 star.style.animationDuration = (Math.random() * 1 + 1) + 's'; // Random duration
+                star.style.animationName = 'sparkle, float'; // Combined animations
+                star.style.animationTimingFunction = 'linear, ease-in-out'; // Timing functions
+                star.style.animationDelay = (Math.random() * 2) + 's'; // Random delay
+                star.style.animationIterationCount = 'infinite'; // Infinite iterations
                 starsContainer.appendChild(star);
             }
         }
