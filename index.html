@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Barlow', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
 
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('anniversary.jpg'); /* Ensure this matches your image filename */
+            background-size: cover; /* Cover the whole page */
+            background-position: center; /* Center the image */
+            filter: blur(8px); /* Apply blur effect */
+            z-index: 0; /* Place behind content */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            var password = prompt("Enter the password:");
+            if (password !== "Iloveemil") { // Replace "Iloveemil" with your chosen password
+                alert("Incorrect password. Access denied.");
+                window.location = "https://google.com"; // Redirect if password is incorrect
+            } else {
+                document.getElementById('readMeButton').style.display = 'block'; // Show the button if password is correct
+            }
+        }
+    </script>
+</head>
+<body onload="checkPassword()">
+    <div class="background"></div>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>Please enter the password to view your special message.</p>
+        <button id="readMeButton" style="display: none;" onclick="window.location.href='readme.html'">Read Me</button>
+    </div>
+</body>
+</html>
