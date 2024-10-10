@@ -16,9 +16,39 @@
             }
         }
     </script>
+    <style>
+        body {
+            display: none; /* Hide content initially */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-image: url('anniversary.jpg'); /* Ensure you have this image */
+            background-size: cover;
+            background-position: center;
+            text-align: center; /* Center text for better mobile display */
+        }
+
+        .container {
+            display: none; /* Initially hidden */
+            position: relative; /* Allow positioning */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+            border-radius: 10px;
+            max-width: 90%; /* Responsive width */
+            margin: 20px auto; /* Center the container */
+        }
+
+        h1 {
+            font-size: 2em; /* Responsive font size */
+        }
+
+        p {
+            font-size: 1.2em; /* Responsive font size */
+        }
+    </style>
 </head>
-<body onload="checkPassword()" style="display: none;">
-    <div class="container" style="display: block;">
+<body onload="checkPassword()">
+    <div class="container">
         <h1>Happy Anniversary, My Love!</h1>
         <p>Here's to many more years of happiness together!</p>
     </div>
