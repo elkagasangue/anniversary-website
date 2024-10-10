@@ -26,17 +26,21 @@
             background-image: url('anniversary.jpg'); /* Ensure you have this image */
             background-size: cover;
             background-position: center;
-            text-align: center; /* Center text for better mobile display */
+            text-align: center; /* Center text */
+            height: 100vh; /* Full height */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
         }
 
         .container {
             display: none; /* Initially hidden */
-            position: relative; /* Allow positioning */
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
             border-radius: 10px;
             max-width: 90%; /* Responsive width */
-            margin: 20px auto; /* Center the container */
+            margin: 20px; /* Add margin for spacing */
+            text-align: center; /* Center text in the container */
         }
 
         h1 {
