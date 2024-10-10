@@ -4,130 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Me</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <link href="(link unavailable)" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            height: 100vh; /* Full height */
-            display: flex; /* Use flexbox */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            position: relative; /* Allow positioning of background */
-            font-family: 'Barlow', sans-serif; /* Apply Barlow font */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-family: 'Barlow', sans-serif;
+            overflow: hidden;
         }
-
+        
         .background {
-            position: absolute; /* Position the background */
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('yourpicture.jpg'); /* Ensure this matches your image filename */
-            background-size: cover; /* Cover the whole page */
-            background-position: center; /* Center the image */
-            filter: blur(8px); /* Apply blur effect */
-            z-index: 0; /* Place behind content */
+            background-image: url('yourpicture.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: 0;
         }
-
+        
         h1 {
             color: white;
             font-size: 2.5em;
             text-align: center;
             position: relative;
-            z-index: 1; /* Bring text above background */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+            z-index: 1;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
-    </style>
-</head>
-<body>
-    <div class="background"></div> <!-- Background div -->
-    <h1>Your Full Anniversary Message!</h1>
-</body>
-</html>
-Key Points
-Background Image: Ensure the image file is named yourpicture.jpg and is in the same directory as this HTML file.
-
-Blurred Background: The background will be blurred using CSS.
-
-Steps to Implement
-Create/Update readme.html: Copy the provided code into your readme.html file.
-
-Upload the Image: Ensure that yourpicture.jpg is in the same folder as your HTML files.
-
-Push Changes to GitHub: Commit and push your changes to your GitHub repository.
-
-Test the Page: Open your GitHub Pages link to see if the blurred background appears correctly.
-
-If you still have issues, please let me know, and we can troubleshoot further!
-
-
-
-You said:
-add small floating heart effect
-ChatGPT said:
-ChatGPT
-Here's the updated readme.html code with a small floating heart effect added, while keeping the blurred background intact.
-
-Complete readme.html
-html
-Copy code
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Read Me</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            height: 100vh; /* Full height */
-            display: flex; /* Use flexbox */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            position: relative; /* Allow positioning of background */
-            font-family: 'Barlow', sans-serif; /* Apply Barlow font */
-            overflow: hidden; /* Prevent overflow */
-        }
-
-        .background {
-            position: absolute; /* Position the background */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('yourpicture.jpg'); /* Ensure this matches your image filename */
-            background-size: cover; /* Cover the whole page */
-            background-position: center; /* Center the image */
-            filter: blur(8px); /* Apply blur effect */
-            z-index: 0; /* Place behind content */
-        }
-
-        h1 {
-            color: white;
-            font-size: 2.5em;
-            text-align: center;
-            position: relative;
-            z-index: 1; /* Bring text above background */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
-        }
-
+        
         .heart {
             position: absolute;
-            width: 15px; /* Smaller heart size */
+            width: 15px;
             height: 15px;
             background-color: red;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Heart shape */
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             opacity: 0.7;
-            animation: float 5s infinite; /* Float animation */
+            animation: float 5s infinite;
         }
-
+        
         @keyframes float {
             0% {
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-30px); /* Move up */
+                transform: translateY(-30px);
             }
             100% {
                 transform: translateY(0);
@@ -136,26 +63,22 @@ Copy code
     </style>
 </head>
 <body>
-    <div class="background"></div> <!-- Background div -->
+    <div class="background"></div>
     <h1>Your Full Anniversary Message!</h1>
-    
-    <div id="hearts"></div> <!-- Hearts container -->
-    
+    <div id="hearts"></div>
     <script>
-        // Create small floating hearts
         function createHearts() {
             const heartsContainer = document.getElementById('hearts');
-            for (let i = 0; i < 10; i++) { // Adjust number of hearts here
+            for (let i = 0; i < 10; i++) {
                 const heart = document.createElement('div');
                 heart.classList.add('heart');
                 heart.style.left = Math.random() * window.innerWidth + 'px';
-                heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Random duration
-                heart.style.bottom = Math.random() * 100 + 'px'; // Start at random height
+                heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                heart.style.bottom = Math.random() * 100 + 'px';
                 heartsContainer.appendChild(heart);
             }
         }
-
-        createHearts(); // Call the function to create hearts
+        createHearts();
     </script>
 </body>
 </html>
